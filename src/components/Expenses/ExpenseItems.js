@@ -4,13 +4,15 @@ import './ExpenseItems.css'
 
 function ExpenseItems(props) {
 
+    const title = props.title;
+
     const clickHandler = () =>{
-        console.log('Click!');
+        title = 'Updated!';
     }
     return (<Card className='expense-item'>
         <ExpenseDate date={props.date}/>
         <div className='expense-item__description'>
-            <h2>{props.title}</h2>
+            <h2>{title}</h2>
         </div>
         <div className='expense-item__price'>${props.amount}</div>
         <button onClick={clickHandler}>Change title</button>
