@@ -11,13 +11,15 @@ function ExpenseItems(props) {
     const clickHandler = () =>{
         setTitle('Updated!');
     }
-    return (<Card className='expense-item'>
+    return (
+        <li>
+    <Card className='expense-item'>
         <ExpenseDate date={props.date}/>
         <div className='expense-item__description'>
             <h2>{title}</h2>
         </div>
         <div className='expense-item__price'>${props.amount}</div>
         <button onClick={clickHandler}>Change title</button>
-        </Card>)
+        </Card></li>)
 }
 export default ExpenseItems;
