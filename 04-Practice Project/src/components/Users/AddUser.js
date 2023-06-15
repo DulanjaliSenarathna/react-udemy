@@ -26,7 +26,7 @@ const AddUser = (props) => {
         if(+enteredAge<1){
             return;
         }
-        console.log(enteredUserName, enteredAge);
+        props.onAddUser(enteredUserName,enteredAge);
         setEnteredAge('');
         setEnteredUserName('');
 
@@ -40,7 +40,6 @@ const AddUser = (props) => {
         <input value={enteredAge} id='age' type='number' onChange={ageChangeHandler}></input>
         <Button type='submit'>Add User</Button>
     </form>
-    <UsersList/>
     </Card>
   )
 }
