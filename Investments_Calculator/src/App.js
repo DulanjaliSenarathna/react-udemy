@@ -19,7 +19,7 @@ function App() {
   const yearlyData = []; // per-year results
 
   if(userInput){
-    let currentSavings = userInput['current-savings']; // feel free to change the shape of this input object!
+    let currentSavings = +userInput['current-savings']; // feel free to change the shape of this input object!
     const yearlyContribution = +userInput['yearly-contribution']; // as mentioned: feel free to change the shape...
     const expectedReturn = +userInput['expected-return'] / 100;
     const duration = +userInput['duration'];
@@ -50,7 +50,9 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-   <ResultsTable/>
+      {!userInput && <p>No investment calculated yet</p>}
+
+   {userInput && <ResultsTable data={yearlyData} initialInvestment={userInput['current-savings']}/>}
     </div>
   );
 }
