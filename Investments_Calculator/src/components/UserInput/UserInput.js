@@ -25,7 +25,7 @@ const inputChangeHandler = (input,value) =>{
 setUserInput((prevInput)=>{
   return {
     ...prevInput,
-    [input]: value
+    [input]: +value
   }
 });
 }
