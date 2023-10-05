@@ -37,9 +37,7 @@ class UserFinder extends Component {
     render(){
         return (
             <Fragment>
-              <UsersContext.Consumer>
-
-              </UsersContext.Consumer>
+             
               <div className={classes.finder}>
                 <input type='search' onChange={this.searchChangeHandler.bind(this)} />
               </div>
