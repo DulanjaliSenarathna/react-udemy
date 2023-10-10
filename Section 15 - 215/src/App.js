@@ -32,7 +32,7 @@ function App() {
       }
 
       
-      setMovies(transformedMovies);
+      setMovies(loadedMovies);
     } catch (error) {
       setError(error.message);
     }
