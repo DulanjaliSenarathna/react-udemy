@@ -20,10 +20,8 @@ function App() {
        if(!response.ok){
     throw new Error('Something went wrong')
    }
-   const data = await response.json();
+      const data = await response.json();
 
-  
-  
       const transformedMovies = data.results.map(movieData => {
         return {
           id: movieData.episode_id,
