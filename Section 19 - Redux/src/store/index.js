@@ -1,6 +1,6 @@
-import { createStore } from 'redux';
+import {configureStore,createSlice} from '@reduxjs/toolkit'
 export const INCREMENT = 'increse';
-import {createSlice, configureStore} from '@reduxjs/toolkit'
+
 
 const initialCounterState = {counter:0, showCounter: true}
 
