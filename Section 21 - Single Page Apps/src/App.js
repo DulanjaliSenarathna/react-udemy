@@ -14,9 +14,9 @@ import ProductDetail from './pages/ProductDetail';
 
  const router = createBrowserRouter([
   {path:'/', element: <RootLayout/>, errorElement: <ErrorPage/>, children:[
-    {path:'/', element: <HomePage/>},
-  {path:'/products', element: <Products/>,},
-  {path:'/products/:productId', element: <ProductDetail/>}
+    {index:true, element: <HomePage/>},// path:''
+  {path:'products', element: <Products/>,},
+  {path:'products/:productId', element: <ProductDetail/>}
   ]},
   
 ])
