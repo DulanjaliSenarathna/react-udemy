@@ -18,7 +18,7 @@ export async function action({request,params}){
     date: data.get('date'),
     description: data.get('description'),
    }
-   const response = fetch('http://localhost:8080/events',{
+   const response = await fetch('http://localhost:8080/events/',{
         method:'POST',
         headers:{
             'Content-Type': 'application/json'
