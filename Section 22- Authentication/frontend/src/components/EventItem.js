@@ -21,10 +21,10 @@ function EventItem({ event }) {
       <h1>{event.title}</h1>
       <time>{event.date}</time>
       <p>{event.description}</p>
-      {token && <menu className={classes.actions}>
+      {token && (<menu className={classes.actions}>
         <Link to="edit">Edit</Link>
         <button onClick={startDeleteHandler}>Delete</button>
-      </menu>}
+      </menu>)}
       
     </article>
   );
