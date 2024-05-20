@@ -21,7 +21,7 @@ const DUMMY_MEETUPS = [
 
 function HomePage(){
 
-    return <MeetupList meetups={}/>
+    return <MeetupList meetups={DUMMY_MEETUPS}/>
 }
 
-export default HomePage();
+export default HomePage;
