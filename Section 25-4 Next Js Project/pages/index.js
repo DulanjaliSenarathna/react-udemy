@@ -33,12 +33,25 @@ function HomePage(props){
 )
 }
 
+// export async function getServerSideProps(context){
+
+//     const req = context.req;
+//     const res= context.res;
+//     // fetch data from API
+//     return {
+//         props: {
+//             meetups: DUMMY_MEETUPS
+//         }
+//     }
+// }
+
 export function getStaticProps(){
     // fetch data from API
     return {
         props:{
             meetups: DUMMY_MEETUPS
-        }
+        },
+        revalidate:1
     };
 }
 
