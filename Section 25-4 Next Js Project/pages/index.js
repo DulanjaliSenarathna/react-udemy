@@ -1,8 +1,6 @@
 
 import MeetupList from '../components/meetups/MeetupList';
 
-console.log(Layout);
-console.log(MeetupList); 
 
 
 const DUMMY_MEETUPS = [
@@ -27,9 +25,9 @@ const DUMMY_MEETUPS = [
 function HomePage(){
 
     return (
-    <Layout>
+    
         <MeetupList meetups={DUMMY_MEETUPS}/>
-    </Layout> 
+    
 )
 }
 
