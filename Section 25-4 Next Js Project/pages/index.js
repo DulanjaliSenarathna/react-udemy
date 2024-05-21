@@ -1,27 +1,6 @@
-
-
+import { MongoClient } from 'mongodb';
 import MeetupList from '../components/meetups/MeetupList';
 
-
-
-const DUMMY_MEETUPS = [
-    {
-        id:'m1',
-        title:'First Meetup',
-        image:'https://www.eventbrite.com/blog/wp-content/uploads/2023/02/Frame-1-5-min-1-1536x864.avif',
-        address:'776/A, Rukhena Watta, Kanuggalla,Ellawala',
-        description:'Before you start planning your event, you need to make a list of your trackable goals, also known as key performance indicators (KPIs). These KPIs provide a yardstick by which to measure your event’s success after everything is over. ',
-
-    },
-    {
-        id:'m2',
-        title:'Second Meetup',
-        image:'https://www.eventbrite.com/blog/wp-content/uploads/2023/02/Frame-1-5-min-1-1536x864.avif',
-        address:'776/A, Rukhena Watta, Kanuggalla,Ellawala',
-        description:'Before you start planning your event, you need to make a list of your trackable goals, also known as key performance indicators (KPIs). These KPIs provide a yardstick by which to measure your event’s success after everything is over. ',
-        
-    }
-]
 
 function HomePage(props){
 
@@ -45,11 +24,24 @@ function HomePage(props){
 //     }
 // }
 
-export function getStaticProps(){
+export async function getStaticProps(){
     // fetch data from API
+
+  const client = await  MongoClient.connect('mongodb+srv://dulanjali:dulanjali@cluster0.iw8arkr.mongodb.net/meetups?retryWrites=true&w=majority&tls=true&appName=Cluster0');
+  const db = client.db();
+
+  const meetupCollection = db.collection('meetups');
+
+const meetups = await meetupCollection.find().toArray();
+client.close();
     return {
         props:{
-            meetups: DUMMY_MEETUPS
+            meetups: meetups.map((meetup) => ({
+                title: meetup.title,
+                address: meetup.address,
+                image:meetup.image,
+                id:meetup._id.toString()
+            }))
         },
         revalidate:1
     };
