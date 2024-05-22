@@ -15,7 +15,7 @@ export default function Modal({ title, children, onClose }) {
       initial= "hidden"
       animate="visible"
       exit= "hidden"
-      whileHover= "hidden"
+     // whileHover= "hidden"
       >
         <h2>{title}</h2>
         {children}
