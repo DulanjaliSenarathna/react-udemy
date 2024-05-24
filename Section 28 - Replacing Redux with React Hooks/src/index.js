@@ -13,7 +13,7 @@ import ProductsProvider from './context/products-context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ProductsProvider store={store}>
+    <ProductsProvider >
         <BrowserRouter>
             <App />
         </BrowserRouter>
