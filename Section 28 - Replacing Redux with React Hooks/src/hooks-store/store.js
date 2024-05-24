@@ -29,10 +29,10 @@ export const useStore = () => {
    
 }
 
-export function initStore(userActions,initialState){
+export const initStore = (userActions,initialState)=>{
 if(initialState){
-    globalState = {...globalState, initialState}
+    globalState = {...globalState, ...initialState}
 }
 
-actions = {...actions, userActions}
+actions = {...actions, ...userActions}
 }
