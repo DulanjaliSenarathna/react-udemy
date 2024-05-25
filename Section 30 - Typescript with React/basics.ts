@@ -11,3 +11,23 @@ userName = 'Max';
 
 let isInstructor:boolean;
 isInstructor = true;
+
+//More complex types
+let hobbies: string[];
+
+hobbies = ['h1','h2']
+
+let person: {
+    name: string,
+    age: number
+}
+
+person = {
+    name: 'Roy',
+    age: 25
+}
+
+let person1: {
+    name: string,
+    age: number
+}[];
