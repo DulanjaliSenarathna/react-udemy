@@ -35,3 +35,9 @@ let person1: {
 // Type inference
 
 let course = 'React';
+
+// Using Union Types
+
+let country : string | number = 'Srilanka';
+
+country = 12;
