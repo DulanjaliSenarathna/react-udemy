@@ -31,3 +31,7 @@ let person1: {
     name: string,
     age: number
 }[];
+
+// Type inference
+
+let course = 'React';
