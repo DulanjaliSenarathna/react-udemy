@@ -17,20 +17,19 @@ let hobbies: string[];
 
 hobbies = ['h1','h2']
 
-let person: {
+type Person = {
     name: string,
     age: number
 }
+
+let person: Person;
 
 person = {
     name: 'Roy',
     age: 25
 }
 
-let person1: {
-    name: string,
-    age: number
-}[];
+let person1: Person[];
 
 // Type inference
 
