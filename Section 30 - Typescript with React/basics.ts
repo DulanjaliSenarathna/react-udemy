@@ -40,3 +40,12 @@ let course = 'React';
 let country : string | number = 'Srilanka';
 
 country = 12;
+
+//Functions and types
+function addNum(a:number,b:number){
+    return a+b;
+}
+
+function print(value:any){
+    console.log(value);
+}
